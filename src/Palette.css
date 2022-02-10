@@ -1,5 +1,7 @@
 .palette{
     height:100vh;
+    overflow: hidden;
+
 }
 .palette-colors{
     height:90%;
