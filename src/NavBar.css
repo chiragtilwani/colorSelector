@@ -1,0 +1,46 @@
+@import url("https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap");
+.slider-container {
+  width: 60rem;
+  display: flex;
+  align-items: center;
+  border:none;
+}
+.logo {
+  font-size: 2.3rem;
+  padding: .5rem 1.5rem;
+  background-color:rgba(128, 128, 128, 0.178);
+  display: inline-block;
+  cursor:pointer;
+  text-decoration: none;
+  color:black;
+}
+
+.selector {
+  font-family: "Dancing Script", cursive;
+  font-weight: 900;
+}
+
+.slider-p {
+  font-size: 1.5rem;
+  font-weight: bold;
+  width: 20%;
+  display: inline-block;
+}
+
+.slider {
+  width: 75%;
+  margin: 0 0.2rem;
+}
+
+.rc-slider-track {
+  background-color: black;
+}
+
+.rc-slider-handle,
+.rc-slider-handle:active,
+.rc-slider-handle:hover,
+.rc-slider-handle:focus {
+  background-color: white;
+  border-color: black;
+  outline: none;
+}
