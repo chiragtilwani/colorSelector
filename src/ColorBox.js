@@ -18,18 +18,18 @@ class ColorBox extends Component {
     
     render() {
         return (
-            <div className="color-box" style={{ backgroundColor: this.props.background.color }}>
-                <div className={this.state.copied?"copy-overlay show" : "copy-overlay"} style={{ backgroundColor: this.props.background.color }}/>
+            <div className="color-box" style={{ backgroundColor: this.props.background }}>
+                <div className={this.state.copied?"copy-overlay show" : "copy-overlay"} style={{ backgroundColor: this.props.background }}/>
                 <div className={this.state.copied?"copy-msg show":"copy-msg"}>
                     <h1 className="copied-h1">Copied!</h1>
-                    <p className="copied-clr">{this.props.background.color}</p>
+                    <p className="copied-clr">{this.props.background}</p>
                 </div>
                 <div className="copy-container">
-                    <CopyToClipboard onCopy={this.handleCopy} text={this.props.background.color}>
+                    <CopyToClipboard onCopy={this.handleCopy} text={this.props.background}>
                     <button className="copy-btn">Copy</button>
                     </CopyToClipboard>
                     <div className="name-more">
-                        <span className="name">{this.props.background.name}</span>
+                        <span className="name">{this.props.name}</span>
                         <span className="more">MORE</span>
                     </div>
                 </div>
