@@ -1,4 +1,12 @@
 @import url("https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap");
+
+.header{
+  display:flex;
+  justify-content:space-between;
+}
+
+
+
 .slider-container {
   width: 60rem;
   display: flex;
@@ -43,4 +51,8 @@
   background-color: white;
   border-color: black;
   outline: none;
+}
+
+.select-container{
+  margin-right:2rem;
 }
