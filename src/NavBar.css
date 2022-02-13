@@ -55,4 +55,22 @@
 
 .select-container{
   margin-right:2rem;
+  display: flex;
+  align-items: center;
+  justify-content:space-between;
+  width:23rem;
+}
+
+.select>option{
+  color:green !important
+}
+
+.label{
+  font-size:1.3rem !important;
+  font-weight:bold !important;
+}
+
+.options{
+  font-size:1rem;
+  
 }

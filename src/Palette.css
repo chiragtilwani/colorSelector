@@ -4,5 +4,21 @@
 
 }
 .palette-colors{
-    height:90%;
+    height:89.5%;
+}
+
+.span-msg{
+    font-size:1.3rem;
+}
+
+.footer{
+    font-size:1.5rem;
+    font-weight: bold;
+    width:100%;
+}
+
+.footer-p{
+    float :right;
+    margin-right:1rem;
+    letter-spacing: .1rem;
 }
