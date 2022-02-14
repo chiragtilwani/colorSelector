@@ -5,6 +5,8 @@ import Snackbar from '@mui/material/Snackbar';
 import IconButton from '@mui/material/IconButton';
 import CloseIcon from '@mui/icons-material/Close';
 import NavBar from './NavBar';
+import { Link } from 'react-router-dom'
+
 
 class Palette extends Component {
     constructor(props) {
@@ -66,8 +68,9 @@ class Palette extends Component {
                     action={action}
                     anchorOrigin={{ vertical: "bottom", horizontal: "left" }}
                 />
-                
+
                 <footer className="footer">
+                    <Link to="/" className="back-btn">Back</Link>
                     <p className="footer-p">{this.props.palette.paletteName} {this.props.palette.emoji}</p>
                 </footer>
             </div>

@@ -7,6 +7,7 @@ import CreatePalette from './CreatePalette'
 
 class App extends Component {
   render() {
+    console.log(PaletteArray)
     return (
       <div className="App">
         <Routes>
