@@ -15,13 +15,15 @@ class Palette extends Component {
         this.handleClick = this.handleClick.bind(this);
         this.handleClose = this.handleClose.bind(this);
     }
+
     handleChange(newLevel) {
         this.setState({ level: newLevel })
     }
-    handleFormatChange(evt) {
-        this.setState({ format: evt.target.value,open:true })
 
-    }
+    handleFormatChange(evt) {
+        this.setState({ format: evt.target.value, open: true })
+    };
+
     handleClick = () => {
         this.setState({ open: true });
     };
@@ -38,7 +40,6 @@ class Palette extends Component {
     render() {
         const action = (
             <React.Fragment>
-
                 <IconButton
                     size="small"
                     aria-label="close"
@@ -51,12 +52,12 @@ class Palette extends Component {
         );
         return (
             <div className="palette">
-
-                <NavBar level={this.state.level} handleChange={this.handleChange} handleFormatChange={this.handleFormatChange} format={this.state.format}/>
+                <NavBar level={this.state.level} handleChange={this.handleChange} handleFormatChange={this.handleFormatChange} format={this.state.format} />
 
                 <div className="palette-colors">
                     {this.props.palette.colors[this.state.level].map(c => <ColorBox background={c[this.state.format]} name={c.name} key={c.name} />)}
                 </div>
+
                 <Snackbar
                     open={this.state.open}
                     autoHideDuration={3000}
@@ -65,6 +66,7 @@ class Palette extends Component {
                     action={action}
                     anchorOrigin={{ vertical: "bottom", horizontal: "left" }}
                 />
+                
                 <footer className="footer">
                     <p className="footer-p">{this.props.palette.paletteName} {this.props.palette.emoji}</p>
                 </footer>

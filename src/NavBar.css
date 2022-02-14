@@ -1,26 +1,24 @@
 @import url("https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap");
 
-.header{
-  display:flex;
-  justify-content:space-between;
+.header {
+  display: flex;
+  justify-content: space-between;
 }
-
-
 
 .slider-container {
   width: 60rem;
   display: flex;
   align-items: center;
-  border:none;
+  border: none;
 }
 .logo {
   font-size: 2.3rem;
-  padding: .5rem 1.5rem;
-  background-color:rgba(128, 128, 128, 0.178);
+  padding: 0.5rem 1.5rem;
+  background-color: rgba(128, 128, 128, 0.178);
   display: inline-block;
-  cursor:pointer;
+  cursor: pointer;
   text-decoration: none;
-  color:black;
+  color: black;
 }
 
 .selector {
@@ -53,24 +51,23 @@
   outline: none;
 }
 
-.select-container{
-  margin-right:2rem;
+.select-container {
+  margin-right: 2rem;
   display: flex;
   align-items: center;
-  justify-content:space-between;
-  width:23rem;
+  justify-content: space-between;
+  width: 23rem;
 }
 
-.select>option{
-  color:green !important
+.select > option {
+  color: green !important;
 }
 
-.label{
-  font-size:1.3rem !important;
-  font-weight:bold !important;
+.label {
+  font-size: 1.3rem !important;
+  font-weight: bold !important;
 }
 
-.options{
-  font-size:1rem;
-  
+.options {
+  font-size: 1rem;
 }

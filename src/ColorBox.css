@@ -17,8 +17,7 @@
 }
 
 .copy-btn {
-    cursor: pointer;
-
+  cursor: pointer;
   width: 10rem;
   height: 3rem;
   outline: none;
@@ -26,6 +25,7 @@
   border: none;
   opacity: 0;
   color: white;
+  letter-spacing: 0.1rem;
 }
 
 .color-box:hover .copy-btn {
@@ -35,7 +35,7 @@
 
 .name-more {
   position: absolute;
-  bottom: .2rem;
+  bottom: 0.2rem;
   display: flex;
   justify-content: space-between;
   width: 100%;
@@ -44,18 +44,17 @@
 
 .more {
   background: rgba(255, 255, 255, 0.3);
-  /* padding:3px; */
   width: 6rem;
   height: 2.5rem;
   text-align: center;
   line-height: 3rem;
-  letter-spacing: .1rem;
+  letter-spacing: 0.1rem;
 }
 
 .name {
-  padding: .4rem;
+  padding: 0.4rem;
   text-transform: uppercase;
-  letter-spacing: .1rem;
+  letter-spacing: 0.1rem;
 }
 
 .copy-overlay {
@@ -99,20 +98,20 @@
   height: 20%;
   margin: auto 0;
   transform: scale(1);
-  text-shadow: .2rem .2rem .2rem rgba(0, 0, 0, 0.5);
+  text-shadow: 0.2rem 0.2rem 0.2rem rgba(0, 0, 0, 0.5);
   transition: all 0.4s ease-in-out;
 }
 
-.copied-h1{
-    background-color: rgba(255, 255, 255, 0.3);
-    padding :1rem 0;   
-    font-size: 4rem;
-    letter-spacing:.1rem;
-    text-transform: uppercase;
+.copied-h1 {
+  background-color: rgba(255, 255, 255, 0.3);
+  padding: 1rem 0;
+  font-size: 4rem;
+  letter-spacing: 0.1rem;
+  text-transform: uppercase;
 }
 
-.copied-clr{
-    font-size:1.8rem;
-    font-weight: 600;
-    letter-spacing:.1rem;
+.copied-clr {
+  font-size: 1.8rem;
+  font-weight: 600;
+  letter-spacing: 0.1rem;
 }

@@ -8,12 +8,7 @@ import NativeSelect from '@mui/material/NativeSelect';
 
 
 class NavBar extends Component {
-
-
-
-
     render() {
-        
         return (
             <header className="header">
                 <div className="slider-container">
@@ -25,10 +20,11 @@ class NavBar extends Component {
                         <Slider defaultValue={this.props.level} min={100} max={900} step={100} onAfterChange={this.props.handleChange} />
                     </div>
                 </div>
+
                 <div className="select-container">
 
                     <InputLabel variant="standard" htmlFor="uncontrolled-native" className="label">
-                        Format: 
+                        Format:
                     </InputLabel>
                     <NativeSelect
                         defaultValue="hex"
@@ -43,7 +39,7 @@ class NavBar extends Component {
                         <option value="rgba" onClick={this.handleClick} className="options">RGBA - rgba(255,255,255,1.0)</option>
                     </NativeSelect>
                 </div>
-                
+
             </header>
         )
     }
