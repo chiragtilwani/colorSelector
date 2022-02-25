@@ -11,11 +11,11 @@ class AllPalette extends Component {
 
                 {/* {this.props.paletteArray.map(p => <div><Link to={`/palette/${p.id}`}>{p.paletteName}</Link></div>)} */}
                 <div className="cards">
-                {this.props.paletteArray.map(p => 
-                <Link to={`/palette/${p.id}`} style={{textDecoration:"none"}} className="card">
-                <PaletteCard colors={p.colors} name={p.paletteName}/>
-                </Link>
-                )}
+                    {this.props.paletteArray.map(p =>
+                        <Link to={`/palette/${p.id}`} style={{ textDecoration: "none" }} className="card">
+                            <PaletteCard colors={p.colors} name={p.paletteName} emoji={p.emoji} id={p.id} />
+                        </Link>
+                    )}
                 </div>
 
             </div>
@@ -24,3 +24,4 @@ class AllPalette extends Component {
 }
 
 export default AllPalette;
+
