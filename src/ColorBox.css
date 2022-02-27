@@ -35,7 +35,7 @@
 
 .name-more {
   position: absolute;
-  bottom: 0.2rem;
+  bottom: 0rem;
   display: flex;
   justify-content: space-between;
   width: 100%;
@@ -49,6 +49,9 @@
   text-align: center;
   line-height: 3rem;
   letter-spacing: 0.1rem;
+  text-decoration:none;
+  color:black;
+  font-weight:400
 }
 
 .name {
@@ -114,4 +117,17 @@
   font-size: 1.8rem;
   font-weight: 600;
   letter-spacing: 0.1rem;
+}
+
+.singleColorPaletteBox{
+  width: 20%;
+  height: 50%;
+  display: inline-block;
+  position: relative;
+  cursor: pointer;
+}
+
+.singleColorPaletteBox:hover .copy-btn {
+  opacity: 1;
+  transition: 0.5s;
 }

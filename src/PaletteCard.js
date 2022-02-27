@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import { makeStyles } from '@mui/styles'
 
 // *********USING JSS THAT IS WRITING CSS IN JS FILE*********
@@ -37,6 +37,10 @@ const useStyles = makeStyles({
     cardName: {
         color: 'black',
         marginLeft: ' 1rem',
+    },
+    span:{
+        fontSize:'1.5rem',
+        marginRight:'1rem'
     }
 })
 
@@ -49,8 +53,8 @@ function PaletteCard(props) {
                 {props.colors.map(c => <div className={classes.colorBoxS} style={{ backgroundColor: c.color }} />)}
             </div>
             <div className={classes.paletteName}>
-                <h3 className={classes.cardName}>{props.name} {props.emoji}</h3>
-
+                <h3 className={classes.cardName}>{props.name} </h3>
+        <span className={classes.span}>{props.emoji}</span>
             </div>
         </div>
     )

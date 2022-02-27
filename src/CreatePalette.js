@@ -1,4 +1,3 @@
-// import React, { Component } from 'react';
 import PaletteArray from './SeedColor'
 import { generatePalette } from './colorHelper'
 import { useParams } from 'react-router-dom'
