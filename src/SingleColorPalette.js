@@ -3,17 +3,22 @@ import ColorBox from './ColorBox';
 import NavBar from './NavBar';
 import './singleColorPalette.css'
 import { Link } from 'react-router-dom'
+import Snackbar from '@mui/material/Snackbar';
+import IconButton from '@mui/material/IconButton';
+import CloseIcon from '@mui/icons-material/Close';
 
 
 class SingleColorPalette extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            format: "hex"
+            format: "hex",
+            open:false
         }
-        this._shades = this.gatherShades(this.props.palette, this.props.colorID)
-        console.log(this._shades)//we can use state here but as shades is not changing therefore we are not using state
+        this._shades = this.gatherShades(this.props.palette, this.props.colorID)//we can use state here but as shades is not changing therefore we are not using state
         this.handleFormatChange = this.handleFormatChange.bind(this)
+        this.handleClick = this.handleClick.bind(this);
+        this.handleClose = this.handleClose.bind(this);
     }
 
     gatherShades(palette, colorID) {
@@ -26,14 +31,37 @@ class SingleColorPalette extends Component {
     }
 
     handleFormatChange(evt) {
-        this.setState({ format: evt.target.value })
+        this.setState({ format: evt.target.value,open:true })
+    };
+
+    handleClick = () => {
+        this.setState({ open: true });
+    };
+
+    handleClose = (event, reason) => {
+        if (reason === 'clickaway') {
+            return;
+        }
+
+        this.setState({ open: false });
     };
     render() {
+        const action = (
+            <React.Fragment>
+                <IconButton
+                    size="small"
+                    aria-label="close"
+                    color="inherit"
+                    onClick={this.handleClose}
+                >
+                    <CloseIcon fontSize="medium" />
+                </IconButton>
+            </React.Fragment>
+        );
+        
         const colorBoxes = this._shades.map(shade => {
             const shadeObj = shade[0]
-            console.log(shadeObj)
             let newFormat = this.state.format
-            console.log(newFormat)
             return (
                 <ColorBox key={shadeObj.hex} name={shadeObj.name} background={shadeObj[newFormat]} showLink={false} />
             )
@@ -47,8 +75,15 @@ class SingleColorPalette extends Component {
                 <div className="singleColorPalette-colorContainer">
                     {colorBoxes}
                 </div>
+                <Snackbar
+                    open={this.state.open}
+                    autoHideDuration={3000}
+                    onClose={this.handleClose}
+                    message={<span className="span-msg">Formate Changed to '{this.state.format.toUpperCase()}'</span>}
+                    action={action}
+                    anchorOrigin={{ vertical: "bottom", horizontal: "left" }}
+                />
                 <div className="singleColorPalette-footer">
-                    {console.log(`${window.location.pathname}`)}
                     <Link to={window.location.pathname.replace(`/${this.props.colorID}`, ``)}className="singleColorPalette-backBtn">Back</Link>
                     <div className="colorID">{this.props.colorID}</div>
                 </div>

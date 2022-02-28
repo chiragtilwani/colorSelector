@@ -16,7 +16,6 @@
     display:flex;
     justify-content:space-between;
     align-items:center;
-    border:.2rem solid black
 }
 
 .singleColorPalette-backBtn{
@@ -40,4 +39,5 @@
 .colorID{
     font-size: 1.5rem;
     font-weight: bolder;
+    text-transform: uppercase;
 }

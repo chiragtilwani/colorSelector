@@ -52,12 +52,13 @@ class Palette extends Component {
                 </IconButton>
             </React.Fragment>
         );
+        
         return (
             <div className="palette">
-                <NavBar level={this.state.level} handleChange={this.handleChange} handleFormatChange={this.handleFormatChange} format={this.state.format} showSlider={true}/>
+                <NavBar level={this.state.level} handleChange={this.handleChange} handleFormatChange={this.handleFormatChange} format={this.state.format} showSlider={true} />
 
                 <div className="palette-colors">
-                    {this.props.palette.colors[this.state.level].map(c => <ColorBox background={c[this.state.format]} name={c.name} key={c.name} id={c.id} showLink={true}/>)}
+                    {this.props.palette.colors[this.state.level].map(c => <ColorBox background={c[this.state.format]} name={c.name} key={c.name} id={c.id} showLink={true} />)}
                 </div>
 
                 <Snackbar

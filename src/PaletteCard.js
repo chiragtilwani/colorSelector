@@ -50,7 +50,7 @@ function PaletteCard(props) {
     return (
         <div className={classes.paletteCard}>
             <div className={classes.colorContainer}>
-                {props.colors.map(c => <div className={classes.colorBoxS} style={{ backgroundColor: c.color }} />)}
+                {props.colors.map(c => <div className={classes.colorBoxS} style={{ backgroundColor: c.color }} key={c.name}/>)}
             </div>
             <div className={classes.paletteName}>
                 <h3 className={classes.cardName}>{props.name} </h3>
@@ -60,20 +60,6 @@ function PaletteCard(props) {
     )
 }
 
-// class PaletteCard extends Component {
-//     render() {
-//         return (
-//             <div className="palette-card">
-//                 <div className="color-container">
-//                     {this.props.colors.map(c => <div className="color-box-s" style={{ backgroundColor: c.color }} />)}
-//                 </div>
-//                 <div className="palette-name">
-//                     <h3 className="card-name">{this.props.name} {this.props.emoji}</h3>
 
-//                 </div>
-//             </div>
-//         )
-//     }
-// }
 
 export default PaletteCard;

@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import './ColorBox.css'
 import { CopyToClipboard } from 'react-copy-to-clipboard';
 import { Link} from 'react-router-dom'
+import chroma from 'chroma-js'
 
 
 class ColorBox extends Component {
@@ -27,19 +28,20 @@ class ColorBox extends Component {
             <span>More</span>
         </Link>
         }
+        let isDarkColor=chroma(`${this.props.background}`).luminance()<=0.09
         return (
             <div className={this.props.showLink?"color-box":'singleColorPaletteBox'} style={{ backgroundColor: this.props.background }}>
                 <div className={this.state.copied ? "copy-overlay show" : "copy-overlay"} style={{ backgroundColor: this.props.background }} />
                 <div className={this.state.copied ? "copy-msg show" : "copy-msg"}>
-                    <h1 className="copied-h1">Copied!</h1>
-                    <p className="copied-clr">{this.props.background}</p>
+                    <h1  className={isDarkColor?'copied-h1 lightText':'copied-h1'}>Copied!</h1>
+                    <p className={isDarkColor?'copied-clr lightText':'copied-clr'}>{this.props.background}</p>
                 </div>
                 <div className="copy-container">
                     <CopyToClipboard onCopy={this.handleCopy} text={this.props.background}>
-                        <button className="copy-btn">Copy</button>
+                        <button  className={isDarkColor?'lightText copy-btn':'copy-btn'}>Copy</button>
                     </CopyToClipboard>
                     <div className="name-more">
-                        <span className="name">{this.props.name}</span>
+                        <span className={isDarkColor?'lightText name':'name'}>{this.props.name}</span>
                         {moreBtn}
                     </div>
                 </div>
