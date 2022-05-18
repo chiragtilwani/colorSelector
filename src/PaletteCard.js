@@ -40,7 +40,8 @@ const useStyles = makeStyles({
     },
     span:{
         fontSize:'1.5rem',
-        marginRight:'1rem'
+        marginRight:'1rem',
+        color:'black'
     }
 })
 
