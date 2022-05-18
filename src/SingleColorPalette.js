@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import ColorBox from './ColorBox';
 import NavBar from './NavBar';
-import './singleColorPalette.css'
+import './styles/singleColorPalette.css'
 import { Link } from 'react-router-dom'
 import Snackbar from '@mui/material/Snackbar';
 import IconButton from '@mui/material/IconButton';

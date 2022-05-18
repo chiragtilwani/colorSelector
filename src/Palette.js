@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import ColorBox from './ColorBox';
-import './Palette.css'
+import './styles/Palette.css'
 import Snackbar from '@mui/material/Snackbar';
 import IconButton from '@mui/material/IconButton';
 import CloseIcon from '@mui/icons-material/Close';

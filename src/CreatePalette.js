@@ -2,7 +2,7 @@ import PaletteArray from './SeedColor'
 import { generatePalette } from './colorHelper'
 import { useParams } from 'react-router-dom'
 import Palette from './Palette'
-import './CreatePalette.css'
+import './styles/CreatePalette.css'
 
 function CreatePalette() {
     const { id } = useParams();
