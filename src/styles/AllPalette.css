@@ -2,6 +2,7 @@
 
 .AllPalette{
     width:100%;
+    height:100vh;
     background:url("https://images.pexels.com/photos/6331082/pexels-photo-6331082.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500");
     background-size: cover;
     background-position: center;
