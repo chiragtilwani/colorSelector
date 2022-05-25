@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { useState } from 'react';
+import { useState,useEffect } from 'react';
 import { Link } from 'react-router-dom'
 import { styled, useTheme } from '@mui/material/styles';
 import Box from '@mui/material/Box';
@@ -14,9 +14,9 @@ import ChevronLeftIcon from '@mui/icons-material/ChevronLeft';
 import ChevronRightIcon from '@mui/icons-material/ChevronRight';
 import Button from '@mui/material/Button';
 import { ChromePicker } from 'react-color';
-import TextField from '@mui/material/TextField';
 import './styles/NewPaletteForm.css'
-
+import DraggableColorBox from './DraggableColorBox'
+import { ValidatorForm, TextValidator } from 'react-material-ui-form-validator'
 
 const drawerWidth = 240;
 
@@ -76,12 +76,37 @@ export default function PersistentDrawerLeft() {
     setOpen(false);
   };
 
-  const [color,setColor]=useState('teal')
-  const [colorArray,setColorArray]=useState(['purple','red'])
-
-  const addColor = () =>{
-    setColorArray([...colorArray,color.hex])
+  const [color,setColor]=useState('#008080')
+  const [clrName, setClrName] = useState('teal')
+  const [colorArray, setColorArray] = useState([])
+  
+  function handleClrNameChange(evt) {
+    evt.preventDefault();
+    setClrName(evt.target.value);
+    // setColorNameArray([...colorNameArray,clrName])
+    // console.log(clrName)
+    // console.log(colorNameArray)
   }
+
+  const addColor = () => {
+    const newColor={
+      color:color,
+      name:clrName
+    }
+    setColorArray([...colorArray, newColor])
+    setClrName("")
+  }
+
+
+  useEffect(()=>{
+    // custom rule will have name 'isColorNameUnique'
+    ValidatorForm.addValidationRule("isColorNameUnique", value => 
+        colorArray.every(({name})=>name.toLowerCase() !== value.toLowerCase())
+    );
+    ValidatorForm.addValidationRule("isColorUnique", value => 
+        colorArray.every(c=>c.color !== color)
+    );
+})
 
   return (
     <Box sx={{ display: 'flex' }}>
@@ -110,7 +135,7 @@ export default function PersistentDrawerLeft() {
             width: drawerWidth,
             boxSizing: 'border-box',
             justifyContent: 'space-between',
-            alignItems: 'center'
+            alignItems: 'center',
           },
         }}
         variant="persistent"
@@ -133,25 +158,30 @@ export default function PersistentDrawerLeft() {
               RANDOM COLOR
             </Button>
           </div>
-          <TextField
-          
-          id="standard-error-helper-text"
-          label="Color Name"
-          helperText="Incorrect entry."
-          variant="standard"
-          style={{marginBottom: '2rem'}}
-        />
-          
-          <ChromePicker color={color} onChangeComplete={(newColor) => setColor(newColor)} />
-          <Button variant="contained" style={{ width: '80%', height: '5rem', marginTop: '2rem', fontWeight: 'bold', fontSize: '1.5rem', padding: '1rem 0',backgroundColor:color.hex }} onClick={addColor}>ADD COLOR</Button>
+
+          <ChromePicker color={color} onChangeComplete={(newColor) => setColor(newColor.hex)} />
+          <ValidatorForm onSubmit={addColor}>
+            <TextValidator
+              value={clrName}
+              onChange={handleClrNameChange}
+              label="Color Name"
+              className="clrname-input"
+              validators={['required','isColorNameUnique','isColorUnique']}
+              errorMessages={['this field is required','color name must be unique','color already used']}
+            />
+            {/* {colorNameArray.forEach(Name=>Name.toLowerCase() !==clrName.toLowerCase() ? null:{errorText})} */}
+            <Button variant="contained" style={{ width: '80%', height: '5rem', fontWeight: 'bold', fontSize: '1.5rem', padding: '1rem 0', backgroundColor: color }}  disabled={colorArray.length === 20 ? true : false} type="submit">ADD COLOR</Button>
+          </ValidatorForm>
+        
         </div>
       </Drawer>
 
-      <Main open={open} className="main">
-          {colorArray.map(c=>
-            <div className="main-div" style={{backgroundColor:c}}>{c}</div>
-          )}
+      <Main open={open} className="main" style={{ padding: '0' }}>
+        {colorArray.map(c =>
+          <DraggableColorBox className="main-div" bgclr={c.color} clrName={clrName} key={c.color}/>
+        )}
       </Main>
+
     </Box>
   );
 }

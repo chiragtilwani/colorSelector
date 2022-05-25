@@ -1,17 +1,18 @@
 .main{
-    border:.2rem solid red;
     margin-top:6.2rem;
-    padding:0;
     height: 90.4vh;
     display: flex;
-    flex-wrap: wrap;
+    flex-wrap:wrap;
     overflow-Y: scroll;
+    
 }
-
-
 
 .main-div{
     display: inline-block;
     width: 20%;
     height:25%;
+}
+
+.clrname-input{
+    margin:2rem;
 }
