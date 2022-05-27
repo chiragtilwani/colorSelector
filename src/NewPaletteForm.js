@@ -129,6 +129,10 @@ export default function PersistentDrawerLeft(props) {
     setPaletteName(evt.target.value);
   }
 
+  function handleDeleteColor(newColorArray) {
+    setColorArray(newColorArray);
+  }
+
   return (
     <Box sx={{ display: "flex" }}>
       <CssBaseline />
@@ -277,6 +281,9 @@ export default function PersistentDrawerLeft(props) {
             bgclr={c.color}
             clrName={clrName}
             key={c.color}
+            id={c.color}
+            colorArray={colorArray}
+            handleDeleteColor={handleDeleteColor}
           />
         ))}
       </Main>
