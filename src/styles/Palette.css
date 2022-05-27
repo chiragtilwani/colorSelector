@@ -4,6 +4,9 @@
 }
 .palette-colors {
   height: 87%;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
 }
 
 .span-msg {

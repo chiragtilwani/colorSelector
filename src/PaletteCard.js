@@ -19,9 +19,10 @@ const useStyles = makeStyles({
         width: '100%',
         height: '80%',
         display: 'flex',
-        flexDirection: ' column',
+        flexDirection: 'column',
         flexWrap: 'wrap',
         overflow: 'hidden',
+        backgroundColor: '#8080801c',
     },
     colorBoxS: {
         width: '25%',

@@ -1,60 +1,71 @@
 @import url("https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap");
 
-.AllPalette{
-    width:100%;
-    height:100vh;
-    background:url("https://images.pexels.com/photos/6331082/pexels-photo-6331082.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500");
+.AllPalette {
+    width: 100%;
+    height: 100vh;
+    /* background: url("https://images.pexels.com/photos/6331082/pexels-photo-6331082.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500"); */
+    background: url('https://images.pexels.com/photos/1576210/pexels-photo-1576210.jpeg?cs=srgb&dl=pexels-deeana-arts-1576210.jpg&fm=jpg');
     background-size: cover;
     background-position: center;
-    margin:0 auto ;
-    display:flex;
-    flex-direction:column;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
 }
 
-.new-palette{
+.new-palette {
     font-size: 1.3rem;
     text-align: end;
-    margin:1rem 1rem 0 0;
+    margin: 1rem 1rem 0 0;
     font-weight: bold;
-    text-decoration:none;
-}
-.allPalette-h1{
-    margin-top:3rem;
-    font-size:4rem;
-    text-shadow:7px 6px 1px #CCCCCC,
-    5px 6px 1px #EEEEEE,
-    6px 5px 1px #CCCCCC,
-    4px 5px 1px #EEEEEE,
-    5px 4px 1px #CCCCCC,
-    3px 4px 1px #EEEEEE,
-    4px 3px 1px #CCCCCC,
-    2px 3px 1px #EEEEEE,
-    3px 2px 1px #CCCCCC,
-    1px 2px 1px #EEEEEE,
-    2px 1px 1px #CCCCCC,
-    0px 1px 1px #EEEEEE,
-    1px 0px 1px #CCCCCC;
+    text-decoration: none;
 }
 
-.allPalette-span{
+.allPalette-h1 {
+    margin-top: 3rem;
+    font-size: 4rem;
+    text-shadow: 7px 6px 1px #CCCCCC,
+        5px 6px 1px #EEEEEE,
+        6px 5px 1px #CCCCCC,
+        4px 5px 1px #EEEEEE,
+        5px 4px 1px #CCCCCC,
+        3px 4px 1px #EEEEEE,
+        4px 3px 1px #CCCCCC,
+        2px 3px 1px #EEEEEE,
+        3px 2px 1px #CCCCCC,
+        1px 2px 1px #EEEEEE,
+        2px 1px 1px #CCCCCC,
+        0px 1px 1px #EEEEEE,
+        1px 0px 1px #CCCCCC;
+}
+
+.allPalette-span {
     font-family: "Dancing Script", cursive;
 
 }
 
-.cards{
-    width:100%;
-    height:100%;
-    margin:2rem auto 0 auto;
+.cards {
+    width: 92%;
+    height: 100%;
+    margin: 2rem auto 0 auto;
     flex-wrap: wrap;
-    display:flex;
-    align-items: center;
-    justify-content: space-around;
+    display: flex;
+    flex-direction:row ;
+    align-items:center;
+    justify-content:flex-start;
+    overflow-y: scroll;
+    background: rgba(205, 48, 48, 0.05);
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+    border-radius: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    padding: 2rem;
 }
 
-.cards::-webkit-scrollbar{
-    width:0;
+.cards::-webkit-scrollbar {
+    width: 0;
 }
 
-.card{
-    margin:2rem;
+.card {
+    margin: 4rem;
 }

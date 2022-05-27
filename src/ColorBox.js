@@ -138,7 +138,6 @@ const useStyles = makeStyles({
 
 function ColorBox(props) {
     const classes = useStyles(props);
-    console.log(classes)
     const [copied, setCopied] = useState(false)
 
     const handleCopy = () => {

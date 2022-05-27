@@ -1,12 +1,11 @@
-import PaletteArray from './SeedColor'
 import { generatePalette } from './colorHelper'
 import { useParams } from 'react-router-dom'
 import Palette from './Palette'
 import './styles/CreatePalette.css'
 
-function CreatePalette() {
+function CreatePalette(props) {
     const { id } = useParams();
-    const foundPalette = PaletteArray.find(p => p.id === id);
+    const foundPalette = props.paletteArray.find(p => p.id === id);
     const generatedPalette = generatePalette(foundPalette)
     return (
         <div className="create-palette">
