@@ -162,7 +162,7 @@ export default function PersistentDrawerLeft(props) {
           </div>
           <div className="btn-container">
             <button
-              to="/"
+              onClick={()=>{navigate('/')}}
               className="custom-btn go-back-btn"
               style={{
                 textDecoration: "none",
