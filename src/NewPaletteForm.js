@@ -15,8 +15,9 @@ import ChevronRightIcon from "@mui/icons-material/ChevronRight";
 import Button from "@mui/material/Button";
 import { ChromePicker } from "react-color";
 import "./styles/NewPaletteForm.css";
-import DraggableColorBox from "./DraggableColorBox";
+import DraggableColorList from "./DraggableColorList";
 import { ValidatorForm, TextValidator } from "react-material-ui-form-validator";
+import {arrayMove} from 'react-sortable-hoc';
 
 const drawerWidth = 240;
 
@@ -129,10 +130,13 @@ export default function PersistentDrawerLeft(props) {
     setPaletteName(evt.target.value);
   }
 
-  function handleDeleteColor(newColorArray) {
+  const handleDeleteColor=(newColorArray)=> {
     setColorArray(newColorArray);
   }
 
+  const onSortEnd = ({oldIndex, newIndex}) => {
+    setColorArray(arrayMove(colorArray, oldIndex, newIndex));
+  };
   return (
     <Box sx={{ display: "flex" }}>
       <CssBaseline />
@@ -268,24 +272,14 @@ export default function PersistentDrawerLeft(props) {
               disabled={colorArray.length === 20 ? true : false}
               type="submit"
             >
-              ADD COLOR
+              {colorArray.length === 20 ? "PALETTE FULL":"ADD COLOR"}
             </Button>
           </ValidatorForm>
         </div>
       </Drawer>
 
       <Main open={open} className="main" style={{ padding: "0" }}>
-        {colorArray.map((c) => (
-          <DraggableColorBox
-            className="draggable-clrBox"
-            bgclr={c.color}
-            clrName={clrName}
-            key={c.color}
-            id={c.color}
-            colorArray={colorArray}
-            handleDeleteColor={handleDeleteColor}
-          />
-        ))}
+        <DraggableColorList colorArray={colorArray} handleDeleteColor={handleDeleteColor} clrName={clrName} axis="xy" onSortEnd={onSortEnd}/>
       </Main>
     </Box>
   );
