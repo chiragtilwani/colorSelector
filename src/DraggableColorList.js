@@ -9,8 +9,8 @@ const DraggableColorList=SortableContainer((props)=> {
                 <DraggableColorBox
                     className="draggable-clrBox"
                     bgclr={c.color}
-                    clrName={props.clrName}
-                    key={c.color}
+                    clrName={c.name}
+                    key={c.name}
                     id={c.color}
                     index={idx}
                     colorArray={props.colorArray}
@@ -20,19 +20,5 @@ const DraggableColorList=SortableContainer((props)=> {
         </div>
     )
 })
-// const DraggableColorList =SortableContainer((props)=>
-//     {props.colorArray.map((c) => (
-//         <DraggableColorBox
-//           className="draggable-clrBox"
-//           bgclr={c.color}
-//           clrName={props.clrName}
-//           key={c.color}
-//           id={c.color}
-//           colorArray={props.colorArray}
-//           handleDeleteColor={props.handleDeleteColor}
-//         />
-//       ))}
-
-// )
 
 export default DraggableColorList;

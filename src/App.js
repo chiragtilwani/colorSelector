@@ -27,7 +27,7 @@ class App extends Component {
           <Route path="/" element={<AllPalette paletteArray={this.state.paletteArray} />} />
           <Route path="/palette/:id" element={<CreatePalette paletteArray={this.state.paletteArray}/>} />
           <Route path="/palette/:paletteID/:colorID" element={<GetIdAndCreatePalette paletteArray={this.state.paletteArray}/>}/>
-          <Route path="/palette/new"element={<NewPaletteForm savePalette={this.savePalette} paletteArray={this.state.paletteArray}/>}/>
+          <Route path="/palette/new"element={<NewPaletteForm savePalette={this.savePalette} paletteArray={this.state.paletteArray} />} />
         </Routes>
       </div>
     );
