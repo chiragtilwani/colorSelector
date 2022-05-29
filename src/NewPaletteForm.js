@@ -9,13 +9,13 @@ import IconButton from "@mui/material/IconButton";
 import ChevronLeftIcon from "@mui/icons-material/ChevronLeft";
 import ChevronRightIcon from "@mui/icons-material/ChevronRight";
 import Button from "@mui/material/Button";
-import { ChromePicker } from "react-color";
 import "./styles/NewPaletteForm.css";
 import DraggableColorList from "./DraggableColorList";
-import { ValidatorForm, TextValidator } from "react-material-ui-form-validator";
+import { ValidatorForm } from "react-material-ui-form-validator";
 import { arrayMoveImmutable } from 'array-move';
 import NewPaletteNav from './NewPaletteNav';
 import { BiAddToQueue } from 'react-icons/bi';
+import ColorPicker from './ColorPicker';
 
 const drawerWidth = 240;
 
@@ -152,7 +152,7 @@ export default function PersistentDrawerLeft(props) {
 
   return (
     <Box sx={{ display: "flex" }}>
-      <NewPaletteNav open={open} AppBar={AppBar} handleDrawerOpen={handleDrawerOpen} navigate={navigate} savePalette={savePalette} paletteName={paletteName} handlePaletteNameChange={handlePaletteNameChange} colorArray={colorArray}/>
+      <NewPaletteNav open={open} AppBar={AppBar} handleDrawerOpen={handleDrawerOpen} navigate={navigate} savePalette={savePalette} paletteName={paletteName} handlePaletteNameChange={handlePaletteNameChange} colorArray={colorArray} />
 
       <Drawer
         sx={{
@@ -191,46 +191,12 @@ export default function PersistentDrawerLeft(props) {
               RANDOM COLOR
             </Button>
           </div>
-
-          <ChromePicker
-            color={color}
-            onChangeComplete={(newColor) => setColor(newColor.hex)}
-          />
-          <ValidatorForm onSubmit={addColor}>
-            <TextValidator
-              value={clrName}
-              onChange={handleClrNameChange}
-              label="Color Name"
-              className="clrname-input"
-              validators={["required", "isColorNameUnique", "isColorUnique"]}
-              errorMessages={[
-                "this field is required",
-                "color name must be unique",
-                "color already used",
-              ]}
-            />
-
-            <Button
-              variant="contained"
-              style={{
-                width: "80%",
-                height: "5rem",
-                fontWeight: "bold",
-                fontSize: "1.5rem",
-                padding: "1rem 0",
-                backgroundColor: `${colorArray.length === 20 ? 'grey' : color}`,
-              }}
-              disabled={colorArray.length === 20 ? true : false}
-              type="submit"
-            >
-              {colorArray.length === 20 ? "PALETTE FULL" : "ADD COLOR"}
-            </Button>
-          </ValidatorForm>
+          <ColorPicker color={color} setColor={setColor} addColor={addColor} clrName={clrName} handleClrNameChange={handleClrNameChange} colorArray={colorArray} />
         </div>
       </Drawer>
 
       <Main open={open} className="main" style={{ padding: "0" }}>
-        {!open?<div className="emptyMain-h1"> <h1>ADD COLORS BY CLICKING <BiAddToQueue/> ICON ON THE TOP LEFT</h1></div>:null}
+        {!open ? <div className="emptyMain-h1"> <h1>ADD COLORS BY CLICKING <BiAddToQueue /> ICON ON THE TOP LEFT</h1></div> : null}
         <DraggableColorList colorArray={colorArray} handleDeleteColor={handleDeleteColor} clrName={clrName} axis="xy" onSortEnd={onSortEnd} />
       </Main>
     </Box>
