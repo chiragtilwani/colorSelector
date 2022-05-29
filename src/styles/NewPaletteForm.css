@@ -30,8 +30,8 @@
 }
 
 .btn-container {
-    width: 35rem;
-    height: 4rem;
+    width: 25rem;
+    height: 3.5rem;
     display: flex;
     align-items: center;
     justify-content: space-around;
