@@ -1,13 +1,10 @@
 import * as React from "react";
 import { useState, useEffect } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { styled, useTheme } from "@mui/material/styles";
 import Box from "@mui/material/Box";
 import Drawer from "@mui/material/Drawer";
-import CssBaseline from "@mui/material/CssBaseline";
 import MuiAppBar from "@mui/material/AppBar";
-import Toolbar from "@mui/material/Toolbar";
-import Typography from "@mui/material/Typography";
 import IconButton from "@mui/material/IconButton";
 import ChevronLeftIcon from "@mui/icons-material/ChevronLeft";
 import ChevronRightIcon from "@mui/icons-material/ChevronRight";
@@ -17,6 +14,7 @@ import "./styles/NewPaletteForm.css";
 import DraggableColorList from "./DraggableColorList";
 import { ValidatorForm, TextValidator } from "react-material-ui-form-validator";
 import { arrayMoveImmutable } from 'array-move';
+import NewPaletteNav from './NewPaletteNav';
 import { BiAddToQueue } from 'react-icons/bi';
 
 const drawerWidth = 240;
@@ -154,69 +152,7 @@ export default function PersistentDrawerLeft(props) {
 
   return (
     <Box sx={{ display: "flex" }}>
-      <CssBaseline />
-      <AppBar position="fixed" open={open} color="default">
-        <Toolbar
-          style={{
-            display: "flex",
-            alignItems: "center",
-            justifyContent: "space-between",
-          }}
-        >
-          <div className="logo-icon-container">
-            <IconButton
-              color="inherit"
-              aria-label="open drawer"
-              onClick={handleDrawerOpen}
-              edge="start"
-              sx={{ mr: 1, ...(open && { display: "none" }), padding: "15px" }}
-            >
-              <BiAddToQueue style={{ fontSize: '1.8rem' }} />
-            </IconButton>
-            <Typography variant="h6" noWrap component="div">
-              <Link
-                to="/"
-                className="logo"
-                style={{ backgroundColor: "transparent", color: "black" }}
-              >
-                Color<span className="selector">Selector</span>
-              </Link>
-            </Typography>
-          </div>
-          <div className="btn-container">
-            <button
-              onClick={() => { navigate('/') }}
-              className="custom-btn go-back-btn"
-              style={{
-                textDecoration: "none",
-                fontWeight: "bold",
-                paddingTop: "1rem",
-              }}
-            >
-              Go Back
-            </button>
-            <ValidatorForm onSubmit={savePalette}>
-              <TextValidator
-                label="Palette Name"
-                value={paletteName}
-                onChange={handlePaletteNameChange}
-                validators={["required", "isPaletteNameUnique"]}
-                errorMessages={[
-                  "this field is required",
-                  "palette name must be unique",
-                ]}
-              />
-              <button
-                className="custom-btn save-palette-btn"
-                style={{ textDecoration: "none", fontWeight: "bold" }}
-                type="submit"
-              >
-                Save Palette
-              </button>
-            </ValidatorForm>
-          </div>
-        </Toolbar>
-      </AppBar>
+      <NewPaletteNav open={open} AppBar={AppBar} handleDrawerOpen={handleDrawerOpen} navigate={navigate} savePalette={savePalette} paletteName={paletteName} handlePaletteNameChange={handlePaletteNameChange} colorArray={colorArray}/>
 
       <Drawer
         sx={{
@@ -248,10 +184,10 @@ export default function PersistentDrawerLeft(props) {
         <div style={{ marginBottom: "8rem" }}>
           <h1>Design Your Palette</h1>
           <div style={{ margin: "1rem 0" }}>
-            <Button variant="contained" style={{ backgroundColor:`${colorArray.length===0? 'grey': "red"}`  }} onClick={clearPalette} disabled={colorArray.length===0? true :false}>
+            <Button variant="contained" style={{ backgroundColor: `${colorArray.length === 0 ? 'grey' : "red"}` }} onClick={clearPalette} disabled={colorArray.length === 0 ? true : false}>
               CLEAR PALETTE
             </Button>
-            <Button variant="contained" style={{ backgroundColor:`${colorArray.length===20? 'grey': "#1976d2"}`  }} onClick={addRandomColor} disabled={colorArray.length===20? true :false}>
+            <Button variant="contained" style={{ backgroundColor: `${colorArray.length === 20 ? 'grey' : "#1976d2"}` }} onClick={addRandomColor} disabled={colorArray.length === 20 ? true : false}>
               RANDOM COLOR
             </Button>
           </div>
@@ -282,7 +218,7 @@ export default function PersistentDrawerLeft(props) {
                 fontWeight: "bold",
                 fontSize: "1.5rem",
                 padding: "1rem 0",
-                backgroundColor:`${colorArray.length===20? 'grey':color }` ,
+                backgroundColor: `${colorArray.length === 20 ? 'grey' : color}`,
               }}
               disabled={colorArray.length === 20 ? true : false}
               type="submit"
@@ -294,6 +230,7 @@ export default function PersistentDrawerLeft(props) {
       </Drawer>
 
       <Main open={open} className="main" style={{ padding: "0" }}>
+        {!open?<div className="emptyMain-h1"> <h1>ADD COLORS BY CLICKING <BiAddToQueue/> ICON ON THE TOP LEFT</h1></div>:null}
         <DraggableColorList colorArray={colorArray} handleDeleteColor={handleDeleteColor} clrName={clrName} axis="xy" onSortEnd={onSortEnd} />
       </Main>
     </Box>

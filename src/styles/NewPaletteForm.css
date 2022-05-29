@@ -6,6 +6,15 @@
     overflow-Y: hidden;
 }
 
+.emptyMain-h1{
+    color:rgba(152, 152, 152, 0.826);
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 .draggable-clrBox {
     display: inline-block;
     width: 20%;
@@ -55,4 +64,12 @@
 .save-palette-btn {
     background-color: rgba(138, 17, 94, 0.694);
     color: white;
+}
+
+.disableBtn {
+    width: 25rem;
+    height: 3.5rem;
+    padding: 0.5rem;
+    margin: 0.5rem;
+    border-radius: 1.8rem;
 }
