@@ -1,4 +1,5 @@
 import * as React from "react";
+import { useState } from 'react'
 import "./styles/NewPaletteForm.css";
 import { ValidatorForm, TextValidator } from "react-material-ui-form-validator";
 import Button from '@mui/material/Button';
@@ -8,11 +9,13 @@ import DialogContent from '@mui/material/DialogContent';
 import DialogContentText from '@mui/material/DialogContentText';
 import DialogTitle from '@mui/material/DialogTitle';
 import './styles/SavePaletteForm.css'
+import Picker from 'emoji-picker-react';
 
 function SavePaletteForm(props) {
     const { savePalette, navigate, paletteName, handlePaletteNameChange, colorArray } = props
-
     const [open, setOpen] = React.useState(false);
+    // const [chosenEmoji, setChosenEmoji] = useState(null);
+    const [showEmojiModal, setShowEmojiModal] = useState(false);
 
     const handleClickOpen = () => {
         setOpen(true);
@@ -21,17 +24,40 @@ function SavePaletteForm(props) {
     const handleClose = () => {
         setOpen(false);
     };
+
+    const onEmojiClick = (event, emojiObject) => {
+        // setChosenEmoji(emojiObject);
+
+        setShowEmojiModal(false);
+        props.SetEmojiFunc(emojiObject.emoji)
+        console.log(emojiObject.emoji);
+        savePalette();
+    };
+
+    const handleShowEmojiClick = () => {
+        setShowEmojiModal(true);
+        setOpen(false);
+    }
+    function closeEmojiModal(){
+        setShowEmojiModal(false);
+    }
     return (
         <div >
+            {showEmojiModal ? <Dialog open={showEmojiModal} onClose={closeEmojiModal}>
+                <DialogTitle className='emoji-dialog-title'>Choose A Palette Emoji</DialogTitle>
+                
+                <Picker onEmojiClick={onEmojiClick} />
+            </Dialog> : null}
+
             <Dialog open={open} onClose={handleClose} className='dialog'>
-                <DialogTitle className='dialog-title'>Palette Name</DialogTitle>
+                <DialogTitle className='dialog-title'>Choose A Palette Name</DialogTitle>
                 <DialogContent className='dialog-content'>
                     <DialogContentText className='dialog-content-text'>
-                        Please enter name for your palette. Make sure it's unique !
+                        Please the name for your palette. Make sure it's unique !
                     </DialogContentText>
 
                 </DialogContent>
-                <ValidatorForm onSubmit={savePalette} >
+                <ValidatorForm onSubmit={handleShowEmojiClick} >
                     <TextValidator
                         label="Palette Name"
                         value={paletteName}
@@ -45,11 +71,11 @@ function SavePaletteForm(props) {
                         margin="dense"
                         id="name"
                         variant="standard"
-                        style={{margin:'0 1rem 0 2.7rem',width:'85%'}}
+                        style={{ margin: '0 1rem 0 2.7rem', width: '85%' }}
                     />
                     <DialogActions>
                         <Button onClick={handleClose} className="dialog-btn">Cancel</Button>
-                        <Button type="submit" className="dialog-btn">Save</Button>
+                        <Button type="submit" className="dialog-btn">Choose Emoji</Button>
                     </DialogActions>
                 </ValidatorForm>
             </Dialog>
@@ -81,4 +107,4 @@ function SavePaletteForm(props) {
     )
 }
 
-export default SavePaletteForm
+export default SavePaletteForm;

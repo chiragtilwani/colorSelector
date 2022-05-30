@@ -72,9 +72,9 @@ export default function PersistentDrawerLeft(props) {
   const [color, setColor] = useState("#008080");
   const [clrName, setClrName] = useState("");
   const [colorArray, setColorArray] = useState([]);
-  // const [showModal, setShowModal] = useState(false);
   const [paletteName, setPaletteName] = useState("");
-
+  // const [choosenEmoji, setChoosenEmoji] = useState("")
+  let choosenEmoji;
   const handleDrawerOpen = () => {
     setOpen(true);
   };
@@ -122,12 +122,20 @@ export default function PersistentDrawerLeft(props) {
     );
   });
 
+
+  const addEmoji = (Emoji) => {
+    console.log(Emoji)
+    // setChoosenEmoji(Emoji);
+    choosenEmoji=Emoji
+  }
+
   const savePalette = () => {
+    console.log(choosenEmoji);
     let name = paletteName;
     const newPalette = {
       paletteName: name,
       id: name.toLowerCase().replace(/\s+/g, "-"),
-      emoji: "🍨",
+      emoji: choosenEmoji,
       colors: colorArray,
     };
     return (
@@ -150,9 +158,11 @@ export default function PersistentDrawerLeft(props) {
   };
 
 
+
+
   return (
     <Box sx={{ display: "flex" }}>
-      <NewPaletteNav open={open} AppBar={AppBar} handleDrawerOpen={handleDrawerOpen} navigate={navigate} savePalette={savePalette} paletteName={paletteName} handlePaletteNameChange={handlePaletteNameChange} colorArray={colorArray} />
+      <NewPaletteNav open={open} AppBar={AppBar} handleDrawerOpen={handleDrawerOpen} navigate={navigate} savePalette={savePalette} paletteName={paletteName} handlePaletteNameChange={handlePaletteNameChange} colorArray={colorArray} addEmoji={addEmoji} />
 
       <Drawer
         sx={{

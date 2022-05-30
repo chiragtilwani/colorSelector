@@ -18,3 +18,7 @@
 .dialog-btn:hover{
     background-color:#4d95dc2e !important;
 }
+
+.emoji-picker{
+    position: absolute !important;
+}

@@ -1,4 +1,5 @@
 import * as React from "react";
+// import {useState} from 'react'
 import { Link } from "react-router-dom";
 import CssBaseline from "@mui/material/CssBaseline";
 import Toolbar from "@mui/material/Toolbar";
@@ -12,6 +13,15 @@ function NewPaletteNav(props) {
     const { open, AppBar, handleDrawerOpen, navigate, savePalette, paletteName, handlePaletteNameChange, colorArray } = props
 
 
+    function SetEmojiFunc(Emoji){
+        props.addEmoji(Emoji)
+        // passEmojiToNewPaletteForm()
+    }
+    
+    // function passEmojiToNewPaletteForm(){
+    //     console.log(emoji)
+    //     props.addEmoji(emoji)
+    // }
     return (<div>
         <CssBaseline />
         <AppBar position="fixed" open={open} color="default">
@@ -42,7 +52,7 @@ function NewPaletteNav(props) {
                         </Link>
                     </Typography>
                 </div>
-                <SavePaletteForm savePalette={savePalette} navigate={navigate} paletteName={paletteName} handlePaletteNameChange={handlePaletteNameChange} colorArray={colorArray}/>
+                <SavePaletteForm savePalette={savePalette} navigate={navigate} paletteName={paletteName} handlePaletteNameChange={handlePaletteNameChange} colorArray={colorArray} SetEmojiFunc={SetEmojiFunc}/>
             </Toolbar>
         </AppBar>
 
