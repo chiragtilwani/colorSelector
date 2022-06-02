@@ -14,7 +14,6 @@ import Picker from 'emoji-picker-react';
 function SavePaletteForm(props) {
     const { savePalette, navigate, paletteName, handlePaletteNameChange, colorArray } = props
     const [open, setOpen] = React.useState(false);
-    // const [chosenEmoji, setChosenEmoji] = useState(null);
     const [showEmojiModal, setShowEmojiModal] = useState(false);
 
     const handleClickOpen = () => {
@@ -26,11 +25,8 @@ function SavePaletteForm(props) {
     };
 
     const onEmojiClick = (event, emojiObject) => {
-        // setChosenEmoji(emojiObject);
-
         setShowEmojiModal(false);
         props.SetEmojiFunc(emojiObject.emoji)
-        console.log(emojiObject.emoji);
         savePalette();
     };
 
@@ -53,7 +49,7 @@ function SavePaletteForm(props) {
                 <DialogTitle className='dialog-title'>Choose A Palette Name</DialogTitle>
                 <DialogContent className='dialog-content'>
                     <DialogContentText className='dialog-content-text'>
-                        Please the name for your palette. Make sure it's unique !
+                        Please choose the name for your palette. Make sure it's unique !
                     </DialogContentText>
 
                 </DialogContent>

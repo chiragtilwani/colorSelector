@@ -12,14 +12,15 @@
     flex-wrap: wrap;
 }
 
+
 .singleColorPalette-footer{
     font-size: 1.5rem;
-  display: flex;
-  align-items: center;
-  justify-content:space-between;
-  font-weight: bold;
-  width: 100%;
-  height:4%;
+    display: flex;
+    align-items: center;
+    justify-content:space-between;
+    font-weight: bold;
+    width: 100%;
+    height:4%;
 }
 
 .singleColorPalette-backBtn{
@@ -42,6 +43,12 @@
 
 .colorID{
     float: right;
-  margin-right: 1rem;
+    margin-right: 1rem;
   letter-spacing: 0.1rem;
+}
+
+@media (max-width: 1199.98px){
+    .singleColorPalette-colorContainer{
+        overflow-y: scroll;
+    }
 }

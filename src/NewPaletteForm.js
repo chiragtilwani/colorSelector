@@ -124,13 +124,10 @@ export default function PersistentDrawerLeft(props) {
 
 
   const addEmoji = (Emoji) => {
-    console.log(Emoji)
-    // setChoosenEmoji(Emoji);
     choosenEmoji=Emoji
   }
 
   const savePalette = () => {
-    console.log(choosenEmoji);
     let name = paletteName;
     const newPalette = {
       paletteName: name,

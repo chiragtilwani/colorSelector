@@ -24,7 +24,7 @@ class NavBar extends Component {
 
                 <div className="select-container">
 
-                    <InputLabel variant="standard" htmlFor="uncontrolled-native" className="label">
+                    <InputLabel variant="standard" htmlFor="uncontrolled-native" className="label" style={{width:'40%'}}>
                         Format:
                     </InputLabel>
                     <NativeSelect
@@ -34,6 +34,7 @@ class NavBar extends Component {
                             id: 'uncontrolled-native',
                         }}
                         onChange={this.props.handleFormatChange}
+                        style={{width:'60%'}}
                     >
                         <option value="hex" onClick={this.handleClick} className="options">HEX - #ffffff</option>
                         <option value="rgb" onClick={this.handleClick} className="options">RGB - rgb(255,255,255)</option>
