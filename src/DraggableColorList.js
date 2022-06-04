@@ -1,13 +1,13 @@
 import React from 'react';
 import { SortableContainer } from 'react-sortable-hoc';
 import DraggableColorBox from './DraggableColorBox'
+import './styles/DraggableColorBox.css'
 
 const DraggableColorList=SortableContainer((props)=> {
     return (
-        <div style={{ height: '100%', width: '100%', display: 'flex', flexWrap: 'wrap' }}>
+        <div className="colorBoxContainer">
             {props.colorArray.map((c,idx) => (
                 <DraggableColorBox
-                    className="draggable-clrBox"
                     bgclr={c.color}
                     clrName={c.name}
                     key={c.name}

@@ -4,20 +4,33 @@ import Sizes from './Sizes'
 // *********USING JSS THAT IS WRITING CSS IN JS FILE*********
 const useStyles = makeStyles({
     mainContainer: {
-        
+
         '&:hover $deleteBtnContainer': {
             marginLeft: '20rem',
-            marginTop:'-1rem',
+            marginTop: '-1rem',
             borderRadius: '0 .5rem .5rem 0',
-            [Sizes.down('lg')]:{
-                marginLeft: '14.9rem',
-                marginTop:'-.7rem',
-            }
+            visibility: 'visible',
+            [Sizes.up('lg')]: {
+                width: '4%',
+                marginLeft: '20.2rem'
+            },
+            [Sizes.down('lg')]: {
+                marginLeft: '20.5rem',
+                width: '5%',
+                marginTop: '-.7rem',
+            },
+            [Sizes.down('sm')]: {
+                marginLeft: '20.6rem',
+                width: '6%',
+            },
+            [Sizes.down('xs')]: {
+                width: '8%',
+            },
         },
         '&:hover $paletteCard': {
             transform: 'scale(1.1)',
             transition: '0.2s linear',
-            
+
         },
     },
     paletteCard: {
@@ -27,24 +40,15 @@ const useStyles = makeStyles({
         borderRadius: '1.2rem',
         overflow: 'hidden',
         zIndex: '2',
-        boxShadow:'1rem 1rem 1rem rgba(0,0,0,.5)',
-        [Sizes.down('lg')]:{
-            width: '15rem',
-            height: '15rem',
-        }
+        boxShadow: '1rem 1rem 1rem rgba(0,0,0,.5)',
     },
     colorContainer: {
         width: '100%',
         height: '85%',
-        display: 'flex',
-        flexDirection: 'column',
-        flexWrap: 'wrap',
+        display: 'grid',
+        gridTemplateColumns: 'repeat(5, 1fr)',
         overflow: 'hidden',
         backgroundColor: '#8080801c',
-    },
-    colorBoxS: {
-        width: '25%',
-        height: '20%',
     },
     paletteName: {
         height: '15%',
@@ -57,9 +61,6 @@ const useStyles = makeStyles({
         color: 'black',
         marginLeft: ' 1rem',
         fontSize: '1.2rem',
-        [Sizes.down('lg')]:{
-                fontSize: '1rem',
-        }
     },
     span: {
         fontSize: '1.5rem',
@@ -69,7 +70,7 @@ const useStyles = makeStyles({
 
     deleteBtnContainer: {
         position: 'fixed',
-        marginLeft: '15rem',
+        marginLeft: '10%',
         zIndex: '-1',
         width: '4%',
         height: '7%',
@@ -83,13 +84,18 @@ const useStyles = makeStyles({
         display: 'flex',
         alignItems: 'center',
         justifyContent: 'center',
-        fontSize:'1.8rem',
+        fontSize: '1.8rem',
+        visibility: 'hidden',
         '&:active': {
-            opacity:'.7',
+            opacity: '.7',
             fontSize: '1.2rem'
         },
-        [Sizes.down('lg')]:{
+        [Sizes.down('lg')]: {
             marginLeft: '8rem'
+        },
+        [Sizes.up('lg')]: {
+            width: '2%',
+            marginLeft: '10rem'
         }
     },
     deleteBtn: {

@@ -175,6 +175,7 @@ export default function PersistentDrawerLeft(props) {
         variant="persistent"
         anchor="left"
         open={open}
+        className='drawer'
       >
         <DrawerHeader>
           <IconButton
@@ -203,7 +204,7 @@ export default function PersistentDrawerLeft(props) {
       </Drawer>
 
       <Main open={open} className="main" style={{ padding: "0" }}>
-        {!open ? <div className="emptyMain-h1"> <h1>ADD COLORS BY CLICKING <BiAddToQueue /> ICON ON THE TOP LEFT</h1></div> : null}
+        {!open&&colorArray.length===0 ? <div className="emptyMain-h1"> <h1>ADD COLORS BY CLICKING <BiAddToQueue /> ICON ON THE TOP LEFT</h1></div> : null}
         <DraggableColorList colorArray={colorArray} handleDeleteColor={handleDeleteColor} clrName={clrName} axis="xy" onSortEnd={onSortEnd} />
       </Main>
     </Box>

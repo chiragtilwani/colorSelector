@@ -13,7 +13,9 @@ class NavBar extends Component {
         return (
             <header className="header">
                 <div className="slider-container">
-                    <Link to='/' className="logo">Color<span className="selector">Selector</span></Link>
+                    
+                    
+                    {this.props.showSlider?"":<Link to='/' className="logo" >Color<span className="selector">Selector</span></Link>}
                     {this.props.showSlider?<div className="slider-p">
                         <p>Level : {this.props.level}</p>
                     </div>:""}

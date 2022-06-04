@@ -3,14 +3,14 @@ import { makeStyles } from '@mui/styles'
 const useStyles = makeStyles({
     container: {
         backgroundColor: props => props.bgclr,
-        width: '20%',
         height: '25%',
+        minHeight:'15rem',
         display: 'flex',
         alignItems: 'flex-end',
         '&:hover svg': {
             color: 'white',
             transform: 'scale(1.5)'
-        }
+        },
     },
     nameTrashBtn: {
         display: 'flex',

@@ -4,8 +4,8 @@ import Sizes from './Sizes'
 
 const useStyles = makeStyles({
     colorBox: {
-        height: props => props.showLink ? '25%' : '50%',
-        width: ' 20%',
+        // height: props => props.showLink ? '25%' : '50%',
+        // width: ' 20%',
         display: 'inline-block',
         position: 'relative',
         cursor: 'pointer',
@@ -16,11 +16,11 @@ const useStyles = makeStyles({
             }
         },
         [Sizes.down('md')]:{
-            width: '50%',
-            height: props => props.showLink ? '30%' : '50%'
+            // width: '50%',
+            // height: props => props.showLink ? '30%' : '50%'
         },
         [Sizes.down('xs')]:{
-            width: '100%',
+            // width: '100%',
             
         },
         
@@ -136,7 +136,7 @@ const useStyles = makeStyles({
         fontSize: '4rem',
         letterSpacing: '0.1rem',
         textTransform: 'uppercase',
-        color: props => chroma(`${props.background}`).luminance() >= 0.09 ? 'black' : 'white'
+        color: props => chroma(`${props.background}`).luminance() >= 0.09 ? 'black' : 'white',
     },
 
     copiedClr: {

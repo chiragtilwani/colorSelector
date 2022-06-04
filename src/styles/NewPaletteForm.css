@@ -1,24 +1,30 @@
 .main {
-    margin-top: 6rem;
+    margin-top: 6.5rem;
     height: 90vh;
-     display: flex;
-    flex-wrap: wrap;
-    overflow-Y: hidden;
+    overflow-Y: scroll;
+}
+
+.main::-webkit-scrollbar{
+    width: 1rem;
+}
+.main::-webkit-scrollbar-thumb{
+    color:grey
 }
 
 .emptyMain-h1{
     color:rgba(152, 152, 152, 0.826);
     width: 100%;
-    height: 100%;
+    height: 89%;
     display: flex;
     justify-content: center;
     align-items: center;
+    position:absolute;
 }
-
-.draggable-clrBox {
-    display: inline-block;
-    width: 20%;
-    height: 25%;
+.emptyMain-h1::-webkit-scrollbar{
+    width: 1rem;
+}
+.emptyMain-h1::-webkit-scrollbar-thumb{
+    color:grey
 }
 
 .clrname-input {
@@ -35,6 +41,7 @@
     display: flex;
     align-items: center;
     justify-content: space-around;
+    margin-right:0rem
 }
 
 .custom-btn {
@@ -72,4 +79,43 @@
     padding: 0.5rem;
     margin: 0.5rem;
     border-radius: 1.8rem;
+}
+
+@media only screen and (max-width: 767.98px) {
+    .main{
+        margin-top:5.9rem
+    }
+    .btn-container {
+        width: 15rem;
+        height: 3.5rem;
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+    }
+    .custom-btn {
+        height: 3.5rem;
+        padding: 0.5rem;
+        margin: 0.5rem;
+        border-radius: 1.8rem;
+        border-width: 0 .2rem .2rem 0;
+        font-size: 1rem;
+    }
+    .save-palette-btn {
+        font-size:1rem
+    }
+    .disableBtn {
+        padding: 0.2rem;
+        font-size: 1rem;
+    }
+}
+
+
+@media only screen and (max-width: 575.98px) {
+    .emptyMain-h1{
+        font-size:.6rem ;
+    }
+    .logo{
+        visibility:hidden
+    }
+    
 }
