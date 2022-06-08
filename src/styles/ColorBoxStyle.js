@@ -4,8 +4,6 @@ import Sizes from './Sizes'
 
 const useStyles = makeStyles({
     colorBox: {
-        // height: props => props.showLink ? '25%' : '50%',
-        // width: ' 20%',
         display: 'inline-block',
         position: 'relative',
         cursor: 'pointer',

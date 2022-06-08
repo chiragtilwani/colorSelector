@@ -16,9 +16,10 @@ import { arrayMoveImmutable } from 'array-move';
 import NewPaletteNav from './NewPaletteNav';
 import { BiAddToQueue } from 'react-icons/bi';
 import ColorPicker from './ColorPicker';
+import seedColors from './SeedColor';
+
 
 const drawerWidth = 240;
-
 const Main = styled("main", { shouldForwardProp: (prop) => prop !== "open" })(
   ({ theme, open }) => ({
     flexGrow: 1,
@@ -92,7 +93,7 @@ export default function PersistentDrawerLeft(props) {
   }
 
   function addRandomColor() {
-    const allColorsArray = props.paletteArray.map(p => p.colors).flat()
+    const allColorsArray = seedColors.map(p => p.colors).flat()
     let rand = Math.floor(0 + Math.random() * (((allColorsArray.length) - 0)))
     const randomColor = allColorsArray[rand];
     if (colorArray.every(c => c.name !== randomColor.name)) {
@@ -124,7 +125,7 @@ export default function PersistentDrawerLeft(props) {
 
 
   const addEmoji = (Emoji) => {
-    choosenEmoji=Emoji
+    choosenEmoji = Emoji
   }
 
   const savePalette = () => {
@@ -204,7 +205,7 @@ export default function PersistentDrawerLeft(props) {
       </Drawer>
 
       <Main open={open} className="main" style={{ padding: "0" }}>
-        {!open&&colorArray.length===0 ? <div className="emptyMain-h1"> <h1>ADD COLORS BY CLICKING <BiAddToQueue /> ICON ON THE TOP LEFT</h1></div> : null}
+        {!open && colorArray.length === 0 ? <div className="emptyMain-h1"> <h1>ADD COLORS BY CLICKING <BiAddToQueue /> ICON ON THE TOP LEFT</h1></div> : null}
         <DraggableColorList colorArray={colorArray} handleDeleteColor={handleDeleteColor} clrName={clrName} axis="xy" onSortEnd={onSortEnd} />
       </Main>
     </Box>

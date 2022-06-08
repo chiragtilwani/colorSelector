@@ -13,7 +13,7 @@ class SingleColorPalette extends Component {
         super(props);
         this.state = {
             format: "hex",
-            open:false
+            open: false
         }
         this._shades = this.gatherShades(this.props.palette, this.props.colorID)//we can use state here but as shades is not changing therefore we are not using state
         this.handleFormatChange = this.handleFormatChange.bind(this)
@@ -31,7 +31,7 @@ class SingleColorPalette extends Component {
     }
 
     handleFormatChange(evt) {
-        this.setState({ format: evt.target.value,open:true })
+        this.setState({ format: evt.target.value, open: true })
     };
 
     handleClick = () => {
@@ -58,7 +58,7 @@ class SingleColorPalette extends Component {
                 </IconButton>
             </React.Fragment>
         );
-        
+
         const colorBoxes = this._shades.map(shade => {
             const shadeObj = shade[0]
             let newFormat = this.state.format
@@ -84,7 +84,7 @@ class SingleColorPalette extends Component {
                     anchorOrigin={{ vertical: "bottom", horizontal: "left" }}
                 />
                 <div className="singleColorPalette-footer">
-                    <Link to={window.location.pathname.replace(`/${this.props.colorID}`, ``)}className="singleColorPalette-backBtn">Back</Link>
+                    <Link to={window.location.pathname.replace(`/${this.props.colorID}`, ``)} className="singleColorPalette-backBtn">Back</Link>
                     <div className="colorID">{this.props.colorID}</div>
                 </div>
             </div >

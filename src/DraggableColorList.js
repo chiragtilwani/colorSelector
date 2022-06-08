@@ -3,10 +3,10 @@ import { SortableContainer } from 'react-sortable-hoc';
 import DraggableColorBox from './DraggableColorBox'
 import './styles/DraggableColorBox.css'
 
-const DraggableColorList=SortableContainer((props)=> {
+const DraggableColorList = SortableContainer((props) => {
     return (
         <div className="colorBoxContainer">
-            {props.colorArray.map((c,idx) => (
+            {props.colorArray.map((c, idx) => (
                 <DraggableColorBox
                     bgclr={c.color}
                     clrName={c.name}

@@ -9,24 +9,24 @@ import NativeSelect from '@mui/material/NativeSelect';
 
 class NavBar extends Component {
     render() {
-        
+
         return (
             <header className="header">
                 <div className="slider-container">
-                    
-                    
-                    {this.props.showSlider?"":<Link to='/' className="logo" >Color<span className="selector">Selector</span></Link>}
-                    {this.props.showSlider?<div className="slider-p">
+
+                    <Link to='/' className='logo sm-logo' >C<span className="selector">S</span></Link>
+                    <Link to='/' className='logo lg-logo' >Color<span className="selector">Selector</span></Link>
+                    {this.props.showSlider ? <div className="slider-p">
                         <p>Level : {this.props.level}</p>
-                    </div>:""}
-                    {this.props.showSlider?<div className="slider">
+                    </div> : ""}
+                    {this.props.showSlider ? <div className="slider">
                         <Slider defaultValue={this.props.level} min={100} max={900} step={100} onAfterChange={this.props.handleChange} />
-                    </div>:""}
+                    </div> : ""}
                 </div>
 
                 <div className="select-container">
 
-                    <InputLabel variant="standard" htmlFor="uncontrolled-native" className="label" style={{width:'40%'}}>
+                    <InputLabel variant="standard" htmlFor="uncontrolled-native" className="label" style={{ width: '40%' }}>
                         Format:
                     </InputLabel>
                     <NativeSelect
@@ -36,7 +36,7 @@ class NavBar extends Component {
                             id: 'uncontrolled-native',
                         }}
                         onChange={this.props.handleFormatChange}
-                        style={{width:'60%'}}
+                        style={{ width: '60%' }}
                     >
                         <option value="hex" onClick={this.handleClick} className="options">HEX - #ffffff</option>
                         <option value="rgb" onClick={this.handleClick} className="options">RGB - rgb(255,255,255)</option>

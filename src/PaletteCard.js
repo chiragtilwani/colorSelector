@@ -44,7 +44,7 @@ function PaletteCard(props) {
                 </DialogTitle>
                 <DialogContent>
                     <DialogContentText id="alert-dialog-description">
-                        Are you sure you want to delete this palette from palette list ? Deleted palette cannot be recovered.
+                        Are you sure you want to delete <span className={classes.dialogBoxPaletteName}>{props.name}</span> palette from palette list ? Deleted palette cannot be recovered.
                     </DialogContentText>
                 </DialogContent>
                 <DialogActions>

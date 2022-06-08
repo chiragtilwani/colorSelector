@@ -52,7 +52,7 @@ class Palette extends Component {
                 </IconButton>
             </React.Fragment>
         );
-        
+
         return (
             <div className="palette">
                 <NavBar level={this.state.level} handleChange={this.handleChange} handleFormatChange={this.handleFormatChange} format={this.state.format} showSlider={true} />

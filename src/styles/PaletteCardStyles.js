@@ -10,8 +10,9 @@ const useStyles = makeStyles({
             marginTop: '-1rem',
             borderRadius: '0 .5rem .5rem 0',
             visibility: 'visible',
+            
             [Sizes.up('lg')]: {
-                width: '4%',
+                width: '2.9%',
                 marginLeft: '20.2rem'
             },
             [Sizes.down('lg')]: {
@@ -50,6 +51,9 @@ const useStyles = makeStyles({
         overflow: 'hidden',
         backgroundColor: '#8080801c',
     },
+    colorBoxS:{
+        maxWidth: '',
+    },
     paletteName: {
         height: '15%',
         display: 'flex',
@@ -86,6 +90,7 @@ const useStyles = makeStyles({
         justifyContent: 'center',
         fontSize: '1.8rem',
         visibility: 'hidden',
+        boxShadow:'.2rem .2rem 1rem rgba(0, 0, 0, 0.5)',
         '&:active': {
             opacity: '.7',
             fontSize: '1.2rem'
@@ -101,6 +106,9 @@ const useStyles = makeStyles({
     deleteBtn: {
         backgroundColor: 'red',
         marginLeft: '.2rem'
+    },
+    dialogBoxPaletteName:{
+        fontWeight: 'bold',
     }
 })
 

@@ -1,4 +1,6 @@
 import { makeStyles } from '@mui/styles'
+import chroma from 'chroma-js'
+
 
 const useStyles = makeStyles({
     container: {
@@ -17,7 +19,9 @@ const useStyles = makeStyles({
         width: '100%',
         justifyContent: 'space-between',
         padding: '.5rem .7rem',
-        letterSpacing: '.1rem'
+        letterSpacing: '.1rem',
+        color: props => chroma(props.bgclr).luminance() >= 0.09 ? 'black' : 'white',
+
     },
     trashBin: {
         transitionDuration: '.3s',

@@ -34,14 +34,14 @@ function SavePaletteForm(props) {
         setShowEmojiModal(true);
         setOpen(false);
     }
-    function closeEmojiModal(){
+    function closeEmojiModal() {
         setShowEmojiModal(false);
     }
     return (
         <div >
             {showEmojiModal ? <Dialog open={showEmojiModal} onClose={closeEmojiModal}>
                 <DialogTitle className='emoji-dialog-title'>Choose A Palette Emoji</DialogTitle>
-                
+
                 <Picker onEmojiClick={onEmojiClick} />
             </Dialog> : null}
 
@@ -53,7 +53,7 @@ function SavePaletteForm(props) {
                     </DialogContentText>
 
                 </DialogContent>
-                <ValidatorForm onSubmit={handleShowEmojiClick} >
+                <ValidatorForm onSubmit={handleShowEmojiClick} ref="form" instantValidate={false}>
                     <TextValidator
                         label="Palette Name"
                         value={paletteName}

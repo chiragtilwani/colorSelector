@@ -39,7 +39,8 @@
     border-right-width: .2rem;
     border-bottom-width: .2rem;
 }
-.new-palette:hover{
+
+.new-palette:hover {
     opacity: .8;
 }
 
@@ -67,7 +68,7 @@
     flex-wrap: wrap;
     display: flex;
     flex-direction: row;
-    justify-content: center;
+    justify-content: flex-start;
     overflow-y: scroll;
     background: rgba(205, 48, 48, 0.05);
     box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
@@ -78,6 +79,73 @@
     padding: 2rem;
 }
 
+.allPalette-container {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    border-radius: 1.2rem;
+}
+
+.left {
+    width: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.right {
+    width: 60%;
+    height: 100%;
+    position: relative;
+}
+
+.right-h1 {
+    position: absolute;
+    top: 2rem;
+    left: 12rem;
+    font-size: 2.5rem;
+    color: #bc343e;
+}
+
+.allPalettes-h1 {
+    color: rgba(61, 58, 58, 0.826);
+    background-color: orange;
+    border-radius: 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+    font-size: 3rem;
+    text-decoration: none;
+    border: solid black;
+    border-top: 0;
+    border-left: 0;
+    border-right-width: .3rem;
+    border-bottom-width: .3rem;
+    width: 50%;
+}
+
+.allPalettes-h1:hover {
+    opacity: .9;
+}
+
+.allPalettes-h1:active {
+    border: solid black;
+    border-bottom: 0;
+    border-right: 0;
+    border-left-width: .3rem;
+    border-top-width: .3rem;
+}
+
+.svg-img {
+    width: 100%;
+    height: 100%;
+}
+
+
 .cards::-webkit-scrollbar {
     width: 0;
 }
@@ -87,31 +155,59 @@
 }
 
 @media only screen and (max-width: 1199.98px) {
-    .cards{
-        margin:2rem 13rem;
+    .cards {
+        margin: 2rem 13rem;
+    }
+
+    .allPalettes-h1 {
+        font-size: 2rem;
+    }
+}
+
+@media only screen and (max-width: 1199.98px) {
+    .allPalette-container {
+        flex-direction: column;
+    }
+
+    .left {
+        margin: 2rem;
+    }
+
+    .right {
+        height: 85%;
+        width: 50%;
     }
 }
 
 @media only screen and (max-width: 767.98px) {
-    .cards{
-        margin:2rem 5rem
-    }
-    .allPalette-h1 {
-        font-size: 3.5rem;
+    .cards {
+        margin: 2rem 5rem
     }
 
     .new-palette {
         width: 12rem;
         height: 3.5rem;
-        letter-spacing:.1rem;
+        letter-spacing: .1rem;
     }
 }
 
 @media only screen and (max-width: 575.98px) {
-    .heading{
+    .heading {
         flex-direction: column;
     }
-    .allPalette-h1{
-        margin-bottom: 1rem;
+
+    .left {
+        display: none;
+        
     }
+    
+    .right {
+        height: 100%;
+        width: 100%;
+    }
+    /* .allPalettes-h1{
+        width: 70%;
+        margin-top: 50%;
+        margin-bottom: 50%;
+    } */
 }

@@ -1,11 +1,7 @@
 import React, { useState } from 'react';
 import { CopyToClipboard } from 'react-copy-to-clipboard';
 import { Link } from 'react-router-dom'
-// import chroma from 'chroma-js'
-// import { makeStyles } from '@mui/styles'
 import useStyles from './styles/ColorBoxStyle'
-
-
 
 function ColorBox(props) {
     const classes = useStyles(props);

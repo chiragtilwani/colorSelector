@@ -29,6 +29,10 @@
   justify-content: center;
 }
 
+.sm-logo{
+  padding: 0.5rem 1.5rem;
+}
+
 .selector {
   font-family: "Dancing Script", cursive;
   font-weight: 900;
@@ -94,8 +98,17 @@
   }
 }
 @media only screen and (max-width:575.98px){
+  .lg-logo{
+    display:none
+  }
+}
+
+@media only screen and (min-width:575.98px){
   .logo{
     font-size:1.8rem;
     padding: 0rem .5rem;
+  }
+  .sm-logo{
+    display:none
   }
 }
