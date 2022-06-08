@@ -12,15 +12,7 @@ const useStyles = makeStyles({
                 opacity: '1',
                 transition: '.5s'
             }
-        },
-        [Sizes.down('md')]:{
-            // width: '50%',
-            // height: props => props.showLink ? '30%' : '50%'
-        },
-        [Sizes.down('xs')]:{
-            // width: '100%',
-            
-        },
+        }
         
     },
 

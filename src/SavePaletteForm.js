@@ -53,7 +53,7 @@ function SavePaletteForm(props) {
                     </DialogContentText>
 
                 </DialogContent>
-                <ValidatorForm onSubmit={handleShowEmojiClick} ref="form" instantValidate={false}>
+                <ValidatorForm onSubmit={handleShowEmojiClick} instantValidate={false}>
                     <TextValidator
                         label="Palette Name"
                         value={paletteName}

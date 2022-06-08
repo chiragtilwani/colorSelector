@@ -25,6 +25,7 @@ const useStyles = makeStyles({
     },
     trashBin: {
         transitionDuration: '.3s',
+        fontSize:'1.2rem',
         '&:hover': {
             color: 'white',
             transform: 'scale(1.5)'

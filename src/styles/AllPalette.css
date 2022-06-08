@@ -41,7 +41,7 @@
 }
 
 .new-palette:hover {
-    opacity: .8;
+    opacity: .7;
 }
 
 .new-palette:active {
@@ -68,7 +68,7 @@
     flex-wrap: wrap;
     display: flex;
     flex-direction: row;
-    justify-content: flex-start;
+    justify-content: center;
     overflow-y: scroll;
     background: rgba(205, 48, 48, 0.05);
     box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
@@ -94,6 +94,18 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    margin:2rem;
+}
+
+.new-palette-link{
+    color:rgba(51, 45, 45, 0.758);
+    transition-duration: .2s;
+}
+.new-palette-link:hover{
+    color:rgba(245, 245, 245, 0.861)
+}
+.new-palette-link:active{
+    color:red
 }
 
 .right {
@@ -110,35 +122,7 @@
     color: #bc343e;
 }
 
-.allPalettes-h1 {
-    color: rgba(61, 58, 58, 0.826);
-    background-color: orange;
-    border-radius: 1rem;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-weight: bold;
-    font-size: 3rem;
-    text-decoration: none;
-    border: solid black;
-    border-top: 0;
-    border-left: 0;
-    border-right-width: .3rem;
-    border-bottom-width: .3rem;
-    width: 50%;
-}
 
-.allPalettes-h1:hover {
-    opacity: .9;
-}
-
-.allPalettes-h1:active {
-    border: solid black;
-    border-bottom: 0;
-    border-right: 0;
-    border-left-width: .3rem;
-    border-top-width: .3rem;
-}
 
 .svg-img {
     width: 100%;
@@ -154,28 +138,15 @@
     margin: 4rem;
 }
 
-@media only screen and (max-width: 1199.98px) {
-    .cards {
-        margin: 2rem 13rem;
-    }
-
-    .allPalettes-h1 {
-        font-size: 2rem;
+@media only screen and (min-width: 1199.98px) {
+    .left{
+        font-size: 1.4rem;
     }
 }
 
 @media only screen and (max-width: 1199.98px) {
-    .allPalette-container {
-        flex-direction: column;
-    }
-
-    .left {
-        margin: 2rem;
-    }
-
-    .right {
-        height: 85%;
-        width: 50%;
+    .cards {
+        margin: 2rem 13rem;
     }
 }
 
@@ -196,18 +167,4 @@
         flex-direction: column;
     }
 
-    .left {
-        display: none;
-        
-    }
-    
-    .right {
-        height: 100%;
-        width: 100%;
-    }
-    /* .allPalettes-h1{
-        width: 70%;
-        margin-top: 50%;
-        margin-bottom: 50%;
-    } */
 }

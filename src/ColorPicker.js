@@ -10,7 +10,7 @@ function ColorPicker(props) {
       <ChromePicker
         color={color}
         onChangeComplete={(newColor) => setColor(newColor.hex)}
-
+        disableAlpha={true}
       />
       <ValidatorForm onSubmit={addColor} instantValidate={false}>
         <TextValidator

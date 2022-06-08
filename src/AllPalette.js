@@ -2,7 +2,7 @@ import React from 'react';
 import { Link, useNavigate } from 'react-router-dom'
 import PaletteCard from './PaletteCard'
 import './styles/AllPalette.css'
-import emptySvg from './pictures/emptySvg.jpg'
+import emptySvg from './images/emptySvg.jpg'
 
 function AllPalette(props) {
 
@@ -25,10 +25,10 @@ function AllPalette(props) {
                 )}
                 {props.paletteArray.length === 0 ? <div className='allPalette-container'>
                     <div className="left">
-                        <Link to='/palette/new' className="allPalettes-h1">Add a Palette</Link>
+                        <h1 style={{color:'rgba(51, 45, 45, 0.758)'}}>Palette List Empty. Add <Link to="/palette/new" className="new-palette-link">New Palettes</Link></h1>
                     </div>
                     <div className="right">
-                        <img src={emptySvg} className="svg-img"/>
+                        <img src={emptySvg} className="svg-img" alt="palette list empty"/>
                     </div>
                 </div> : null}
             </div>

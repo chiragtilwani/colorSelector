@@ -6,6 +6,7 @@ import CreatePalette from './CreatePalette'
 import NewPaletteForm from './NewPaletteForm'
 import PaletteArray from './SeedColor'
 import GetIdAndCreatePalette from './GetIdAndCreatePalette'
+import NotFound from './NotFound'
 
 class App extends PureComponent {
   constructor(props) {
@@ -37,6 +38,7 @@ class App extends PureComponent {
           <Route path="/palette/:id" element={<CreatePalette paletteArray={this.state.paletteArray} />} />
           <Route path="/palette/:paletteID/:colorID" element={<GetIdAndCreatePalette paletteArray={this.state.paletteArray} />} />
           <Route path="/palette/new" element={<NewPaletteForm savePalette={this.savePalette} paletteArray={this.state.paletteArray} />} />
+          <Route path="*" element={<NotFound/>}/>
         </Routes>
       </div>
     );
