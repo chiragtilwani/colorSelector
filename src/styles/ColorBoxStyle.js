@@ -12,8 +12,7 @@ const useStyles = makeStyles({
                 opacity: '1',
                 transition: '.5s'
             }
-        }
-        
+        },
     },
 
     copyContainer: {

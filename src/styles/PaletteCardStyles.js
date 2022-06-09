@@ -4,28 +4,31 @@ import Sizes from './Sizes'
 // *********USING JSS THAT IS WRITING CSS IN JS FILE*********
 const useStyles = makeStyles({
     mainContainer: {
-
         '&:hover $deleteBtnContainer': {
             marginLeft: '20rem',
             marginTop: '-1rem',
             borderRadius: '0 .5rem .5rem 0',
             visibility: 'visible',
-            
+
             [Sizes.up('lg')]: {
-                width: '2.9%',
+                width: '4%',
                 marginLeft: '20.2rem'
+            },
+            '@media (min-width:1700px)':{
+                width:'2.5%'
             },
             [Sizes.down('lg')]: {
                 marginLeft: '20.5rem',
-                width: '5%',
+                width: '8%',
                 marginTop: '-.7rem',
             },
             [Sizes.down('sm')]: {
                 marginLeft: '20.6rem',
-                width: '6%',
+                width: '5%',
             },
             [Sizes.down('xs')]: {
-                width: '8%',
+                marginLeft: '15rem',
+                width: '17%',
             },
         },
         '&:hover $paletteCard': {
@@ -42,6 +45,10 @@ const useStyles = makeStyles({
         overflow: 'hidden',
         zIndex: '2',
         boxShadow: '1rem 1rem 1rem rgba(0,0,0,.5)',
+        [Sizes.down('xs')]:{
+            width:'15rem',
+            height:'15rem'
+        },
     },
     colorContainer: {
         width: '100%',
@@ -51,9 +58,7 @@ const useStyles = makeStyles({
         overflow: 'hidden',
         backgroundColor: '#8080801c',
     },
-    colorBoxS:{
-        maxWidth: '',
-    },
+
     paletteName: {
         height: '15%',
         display: 'flex',
@@ -77,7 +82,7 @@ const useStyles = makeStyles({
         marginLeft: '10%',
         zIndex: '-1',
         width: '4%',
-        height: '7%',
+        height: '8%',
         backgroundColor: 'red',
         color: 'white',
         borderRadius: '0 1rem 0 0',

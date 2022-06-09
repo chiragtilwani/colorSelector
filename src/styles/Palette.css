@@ -78,6 +78,6 @@
 @media only screen and (max-width: 575.98px){
   .palette-colors {
     grid-template-columns: repeat(1,1fr);
+    grid-auto-rows: 12vh;
   }
-  
 }

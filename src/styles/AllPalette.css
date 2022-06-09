@@ -166,5 +166,8 @@
     .heading {
         flex-direction: column;
     }
+    .cards{
+        margin:3rem
+    }
 
 }
